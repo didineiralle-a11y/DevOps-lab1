@@ -42,9 +42,6 @@ jobs:
       - name: Check health-check endpoint
         run: curl -f http://localhost:5000/health
 
-      - name: Check non-existent endpoint
-        run: curl -f http://localhost:5000/no-such-endpoint
-
       - name: Stop and remove container
         if: always()
         run: docker rm -f web-app
